@@ -6,12 +6,10 @@ const {
   Guild,
   CleanEmblem,
   CleanGuild,
-  Colors,
   Images,
-  RGBs,
 } = require("./TypeDefs");
 
-const colors = require("./util/coords");
+const colors = require("./colors");
 
 /**
  * A helper class for modifying the base images used to build a WoW guild
@@ -52,7 +50,9 @@ class Modifer {
     for (let key in images) {
       const colorKey = key + "ColorId";
       if (emblemConfig[colorKey] !== undefined) {
-        const rgb = colors[key][emblemConfig[colorKey]];
+        const rgb = colors[key].find(
+          (c) => c.id === parseInt(emblemConfig[colorKey])
+        ).rgba;
 
         images[key] = await this.changeImageColor(
           images[key],
