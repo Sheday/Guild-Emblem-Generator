@@ -32,8 +32,8 @@
   },
   "homepage": "https://github.com/TeamJeeves/Guild-Emblem-Generator#readme",
   "dependencies": {
-    "canvas": "^2.6.0",
-    "fs-extra": "^8.1.0"
+    "canvas": "^2.11.2",
+    "fs-extra": "^11.2.0"
   },
   "devDependencies": {
     "jest": "^24.9.0",
@@ -44,5 +44,8 @@
     "ignore": [
       "*.test.js"
     ]
+  },
+  "volta": {
+    "node": "22.11.0"
   }
 }
